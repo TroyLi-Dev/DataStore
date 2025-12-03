@@ -27,4 +27,4 @@
 - [AppDataStorePrefs.kt](./app/src/main/java/com/rui/datastore/AppDataStorePrefs.kt) – 集成缓存策略的示例  
 - [MainActivity.kt](./app/src/main/java/com/rui/datastore/MainActivity.kt) – 演示如何在应用中使用  
 
-或者直接访问在线 GitHub 仓库 demo：[Demo 示例]([https://github.com/TroyLi-Dev/DataStore/tree/main/app](https://github.com/TroyLi-Dev/DataStore/tree/main/app/src/main/java/com/rui/datastore))
+或者直接访问在线 GitHub 仓库 demo：[Demo 示例](app/src/main/java/com/rui/datastore)
