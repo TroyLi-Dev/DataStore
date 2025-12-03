@@ -19,12 +19,17 @@
 - `PreferenceDelegate<T>`：Kotlin 委托封装，简化缓存访问  
 - `Serializer`：对象序列化接口，可自定义实现  
 
-## 使用示例
+
+## 使用示例 Demo
+
+DataStore实现方式：[DataStoreCacheStrategy](app/src/main/java/com/rui/datastore/DataStoreCacheStrategy.kt)
+Gson实现Serializer：[GsonSerializer](app/src/main/java/com/rui/datastore/GsonSerializer.kt)
+
 
 ## see
 
-app/src/main/java/com/rui/datastore/DataStoreCacheStrategy.kt
-app/src/main/java/com/rui/datastore/GsonSerializer.kt
+
+
 
 
 ```kotlin
