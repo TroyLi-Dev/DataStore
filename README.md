@@ -21,7 +21,8 @@
 
 ## 使用示例
 
-#see
+## see
+
 app/src/main/java/com/rui/datastore/DataStoreCacheStrategy.kt
 app/src/main/java/com/rui/datastore/GsonSerializer.kt
 
