@@ -3,7 +3,6 @@
 一个轻量级 **缓存策略抽象框架**，为 Kotlin 项目提供类型安全的缓存接口和委托封装。  
 该框架 **不依赖任何具体存储实现**（如 DataStore 或 MMKV），完全对外提供缓存策略接口，存储由使用者自行实现。
 
-
 ## 特性
 
 - ✅ 提供统一的缓存策略接口（`IStorageStrategy` / `IDataStorePreferences`）  
@@ -19,33 +18,13 @@
 - `PreferenceDelegate<T>`：Kotlin 委托封装，简化缓存访问  
 - `Serializer`：对象序列化接口，可自定义实现  
 
-
 ## 使用示例 Demo
 
-DataStore实现方式：[DataStoreCacheStrategy](app/src/main/java/com/rui/datastore/DataStoreCacheStrategy.kt)
-Gson实现Serializer：[GsonSerializer](app/src/main/java/com/rui/datastore/GsonSerializer.kt)
+你可以在仓库中查看完整示例：  
 
+- [DataStoreCacheStrategy.kt](./app/src/main/java/com/rui/datastore/DataStoreCacheStrategy.kt) – 使用 Android DataStore 实现的缓存策略  
+- [GsonSerializer.kt](./app/src/main/java/com/rui/datastore/GsonSerializer.kt) – Serializer 使用 Gson 实现  
+- [AppDataStorePrefs.kt](./app/src/main/java/com/rui/datastore/AppDataStorePrefs.kt) – 集成缓存策略的示例  
+- [MainActivity.kt](./app/src/main/java/com/rui/datastore/MainActivity.kt) – 演示如何在应用中使用  
 
-## see
-
-
-
-
-
-```kotlin
-// 使用者自定义存储策略实现
-class DataStoreStrategy(...) : IStorageStrategy {
-    override suspend fun putString(key: String, value: String?) { ... }
-    override suspend fun getString(key: String): String? { ... }
-    ...
-}
-
-val userPrefs = DataStorePreferences.create(
-    strategy = DataStoreStrategy(...),
-    serializer = GsonSerializer()
-)
-
-var userName by userPrefs.string("默认用户名")
-var userAge by userPrefs.int(18)
-
-
+或者直接访问在线 GitHub 仓库 demo：[Demo 示例]([https://github.com/TroyLi-Dev/DataStore/tree/main/app](https://github.com/TroyLi-Dev/DataStore/tree/main/app/src/main/java/com/rui/datastore))
