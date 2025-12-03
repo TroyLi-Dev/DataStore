@@ -1,4 +1,4 @@
-# Kotlin Cache Strategy Framework
+# Kotlin Cache Strategy Framework [![](https://jitpack.io/v/TroyLi-Dev/DataStore.svg)](https://jitpack.io/#TroyLi-Dev/DataStore)
 
 一个轻量级 **缓存策略抽象框架**，为 Kotlin 项目提供类型安全的缓存接口和委托封装。  
 该框架 **不依赖任何具体存储实现**（如 DataStore 或 MMKV），完全对外提供缓存策略接口，存储由使用者自行实现。
@@ -28,3 +28,26 @@
 - [MainActivity.kt](./app/src/main/java/com/rui/datastore/MainActivity.kt) – 演示如何在应用中使用  
 
 或者直接访问在线 GitHub 仓库 demo：[Demo 示例](app/src/main/java/com/rui/datastore)
+
+## 快速引入
+
+### Step 1: 添加 JitPack 仓库
+
+在项目根目录的 `settings.gradle` 或 `settings.gradle.kts` 文件末尾添加：
+
+```gradle
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+Step 2: 添加依赖
+
+在模块的 build.gradle 或 build.gradle.kts 文件中添加：
+
+dependencies {
+    implementation 'com.github.troyli-dev:datastore:Tag'
+}
