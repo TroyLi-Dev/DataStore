@@ -46,6 +46,6 @@ Step 2: 添加依赖
 
 ```gradle
 dependencies {
-    implementation 'com.github.troyli-dev:datastore:Tag'
+    implementation 'com.github.TroyLi-Dev:datastore:Tag'
 }
 ```
