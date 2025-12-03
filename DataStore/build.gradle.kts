@@ -9,7 +9,7 @@ plugins {
 publishing {
     publications {
         create<MavenPublication>("release") {
-            groupId = "com.github.troyli-dev"
+            groupId = "com.github.TroyLi-Dev"
             artifactId = "datastore"
             version = project.version as String? ?: "unspecified"
             afterEvaluate {
