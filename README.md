@@ -33,8 +33,6 @@
 
 ### Step 1: 添加 JitPack 仓库
 
-在项目根目录的 `settings.gradle` 或 `settings.gradle.kts` 文件末尾添加：
-
 ```gradle
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
@@ -43,11 +41,11 @@ dependencyResolutionManagement {
         maven { url 'https://jitpack.io' }
     }
 }
-
+```
 Step 2: 添加依赖
 
-在模块的 build.gradle 或 build.gradle.kts 文件中添加：
-
+```gradle
 dependencies {
     implementation 'com.github.troyli-dev:datastore:Tag'
 }
+```
