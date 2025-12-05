@@ -1,5 +1,6 @@
 package com.rui.datastore
 
+import androidx.annotation.RestrictTo
 import java.util.concurrent.ConcurrentHashMap
 
 /**
@@ -18,41 +19,49 @@ interface IDataStorePreferences {
     /**
      * 构建 String 类型的委托属性
      */
+    @RestrictTo(RestrictTo.Scope.SUBCLASSES)
     fun string(default: String): PreferenceDelegate<String>
 
     /**
      * 构建 Int 类型的委托属性
      */
+    @RestrictTo(RestrictTo.Scope.SUBCLASSES)
     fun int(default: Int): PreferenceDelegate<Int>
 
     /**
      * 构建 Long 类型的委托属性
      */
+    @RestrictTo(RestrictTo.Scope.SUBCLASSES)
     fun long(default: Long): PreferenceDelegate<Long>
 
     /**
      * 枠建 Float 类型的委托属性
      */
+    @RestrictTo(RestrictTo.Scope.SUBCLASSES)
     fun float(default: Float): PreferenceDelegate<Float>
 
     /**
      * 构建 Double 类型的委托属性
      */
+    @RestrictTo(RestrictTo.Scope.SUBCLASSES)
     fun double(default: Double): PreferenceDelegate<Double>
 
     /**
      * 构建 Boolean 类型的委托属性
      */
+    @RestrictTo(RestrictTo.Scope.SUBCLASSES)
     fun boolean(default: Boolean): PreferenceDelegate<Boolean>
 
     /**
      * 构建泛型对象的委托属性（非空版本）
      */
+    @RestrictTo(RestrictTo.Scope.SUBCLASSES)
     fun <T : Any> json(clazz: Class<T>, default: T): PreferenceDelegate<T>
 
     /**
      * 构建泛型对象的委托属性（可空版本）
      */
+    @RestrictTo(RestrictTo.Scope.SUBCLASSES)
     fun <T : Any> json(clazz: Class<T>): PreferenceDelegate<T?>
 
     /**
@@ -93,11 +102,11 @@ class DataStorePreferences private constructor(
             serializer: Serializer
         ): IDataStorePreferences {
             val instanceKey = strategy.groupName()
-            return instances.computeIfAbsent(instanceKey) {
-                build(
-                    strategy = strategy,
-                    serializer = serializer
-                )
+            return instances[instanceKey] ?: build(
+                strategy = strategy,
+                serializer = serializer
+            ).also {
+                instances[instanceKey] = it
             }
         }
 
